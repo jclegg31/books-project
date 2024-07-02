@@ -12,7 +12,10 @@ function getFetch() {
       console.log(data.title);
       //put title into localStorage
       localStorage.setItem('books', data.title);
-      document.querySelector('h3').textContent += data.title;
+
+      //document.querySelector('h3').textContent += data.title;
+      //use localStorage instead
+      document.querySelector('h3').textContent += localStorage.getItem('books');
     })
     .catch((err) => {
       console.log(`error ${err}`);
